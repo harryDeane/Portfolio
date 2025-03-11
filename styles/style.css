@@ -1,4 +1,118 @@
+/* Reset default margin and padding */
+body, header, nav {
+  margin: 0;
+  padding: 0;
+}
 /* General Styles */
+
+/* Header Styles */
+header {
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 1rem; /* Add some padding for spacing */
+  display: flex;
+  justify-content: space-between; /* Space between left, center, and right sections */
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Profile Section */
+.profilenav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between image and name */
+}
+
+.profilenav-img {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  border-radius: 50%; /* Circular profile picture */
+  border: 2px solid #fff; /* Optional: Add a border */
+}
+
+.profilenav-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Keep the nav buttons centered */
+}
+
+/* Navigation Links Container */
+nav {
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+  flex-grow: 0; 
+  margin: 0 1rem; /* Add some margin to separate from profile and theme toggle */
+  gap: 1rem;
+}
+
+/* Navigation Bar Buttons */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem; /* Space between buttons */
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #333; /* Match button background color */
+  color: #fff; /* Match button text color */
+  text-decoration: none;
+  border-radius: 5px; /* Match button border radius */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: #555; /* Match button hover background color */
+  transform: scale(1.05); /* Match button hover effect */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1); /* Add hover effect */
+}
+
+/* Dark mode styles for header */
+body.dark-mode header {
+  background: #1f1f1f;
+}
+
+body.dark-mode .profile-name {
+  color: #fff;
+}
+
+body.dark-mode nav ul li a {
+  background: #444; /* Dark mode button background */
+}
+
+body.dark-mode nav ul li a:hover {
+  background: #666; /* Dark mode button hover background */
+}
+
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,29 +120,6 @@ body {
   line-height: 1.6;
   color: #333;
 }
-
-header {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 10px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
 
 
 .btn {
@@ -46,8 +137,8 @@ nav ul li a {
 }
 
 .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   margin-bottom: 1rem;
 }
@@ -318,10 +409,14 @@ body.dark-mode .cv .btn:hover {
   gap: 1.5rem;
 }
 
+/* Project Card with Background Image */
 .project-card {
-  background: #f4f4f4;
-  padding: 1.5rem;
+  position: relative;
+  background-size: cover; /* Scale the image to cover the card */
+  background-position: center; /* Center the image */
   border-radius: 10px;
+  overflow: hidden;
+  padding: 1.5rem;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -331,18 +426,34 @@ body.dark-mode .cv .btn:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Project Content */
+.project-content {
+  position: relative;
+  z-index: 1; /* Ensure content is above the background image */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for readability */
+  padding: 1rem;
+  border-radius: 5px;
+}
+
 .project-card h3 {
   margin-bottom: 1rem;
+  color: #ccc;
   font-size: 1.25rem;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1.5rem;
+  border-radius: 10px;
+ 
 }
 
 .project-card p {
   margin-bottom: 1.5rem;
-  color: #555;
+  color: #ccc;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1.5rem;
+  border-radius: 10px;
 }
 
 .project-card .btn {
-  background: #333;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -355,14 +466,15 @@ body.dark-mode .cv .btn:hover {
   transform: scale(1.05);
 }
 
+
 /* Dark mode styles for projects page */
 body.dark-mode .projects-page h1,
 body.dark-mode .project-category h2 {
   color: #ffffff;
+
 }
 
 body.dark-mode .project-card {
-  background: #1f1f1f;
   color: #ffffff;
 }
 
@@ -376,4 +488,157 @@ body.dark-mode .project-card .btn {
 
 body.dark-mode .project-card .btn:hover {
   background: #666;
+}
+
+/* Ensure background image scaling in dark mode */
+body.dark-mode .project-card {
+  background-size: cover; /* Ensure the image scales correctly */
+  background-position: center; /* Ensure the image is centered */
+  
+}
+
+/* Project Details Page */
+.project-details {
+  padding: 2rem;
+  text-align: center;
+}
+
+.project-details h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.project-img {
+  width: auto;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.project-details p {
+  margin-bottom: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.project-details h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.project-details ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.project-details ul li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.project-details .btn {
+  background: #333;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-details .btn:hover {
+  background: #555;
+  transform: scale(1.05);
+}
+
+/* Dark mode styles for project details */
+body.dark-mode .project-details h1,
+body.dark-mode .project-details h3 {
+  color: #fff;
+}
+
+body.dark-mode .project-details p,
+body.dark-mode .project-details ul li {
+  color: #ccc;
+}
+
+body.dark-mode .project-details .btn {
+  background: #444;
+}
+
+body.dark-mode .project-details .btn:hover {
+  background: #666;
+}
+
+/* Image Gallery */
+.image-gallery {
+  margin: 2rem 0;
+}
+
+.image-gallery h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Links Section */
+.project-links {
+  margin: 2rem 0;
+}
+
+.project-links h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.links-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.links-grid .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* Dark mode styles for image gallery and links */
+body.dark-mode .image-gallery h3,
+body.dark-mode .project-links h3 {
+  color: #fff;
+}
+
+body.dark-mode .gallery-img {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .gallery-img:hover {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }

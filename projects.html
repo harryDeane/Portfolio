@@ -9,46 +9,57 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-      </ul>
-    </nav>
-    <button id="theme-toggle" class="theme-toggle">🌙</button>
-  </header>
+  <nav>
+  <!-- Profile Picture and Name -->
+    <div class="profilenav">
+      <img src="assets/profile.jpeg" alt="Harry Deane" class="profilenav-img">
+      <span class="profilenav-name">Harry Deane</span>
+    </div>
+	<div class="nav-container">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul>
+	</div>
+  </nav>
+  <button id="theme-toggle" class="theme-toggle">🌙</button>
+</header>
 
   <section class="projects-page">
     <h1>My Projects</h1>
 
     <!-- Group Projects Section -->
     <section class="project-category">
-      <h2>Group Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Project Title 1</h3>
-          <p>A brief description of the project, including your role and contributions.</p>
-          <a href="group-project1.html" class="btn">View Details</a>
-        </div>
-        <div class="project-card">
-          <h3>Project Title 2</h3>
-          <p>A brief description of the project, including your role and contributions.</p>
-          <a href="group-project2.html" class="btn">View Details</a>
-        </div>
-        <!-- Add more group projects as needed -->
+  <h2>Group Projects</h2>
+  <div class="project-grid">
+    <div class="project-card" style="background-image: url('assets/group-project1.png');">
+      <div class="project-overlay">
+        <h3>Guard Duty</h3>
+        <p>A C# Multiplayer Game built in Unity</p>
+        <a href="group-project1.html" class="btn">View Details</a>
       </div>
-    </section>
+    </div>
+    <div class="project-card" style="background-image: url('assets/group-project2.jpg');">
+      <div class="project-overlay">
+        <h3>Project Title 2</h3>
+        <p>A brief description of the project, including your role and contributions.</p>
+        <a href="group-project2.html" class="btn">View Details</a>
+      </div>
+    </div>
+    <!-- Add more group projects as needed -->
+  </div>
+</section>
 
     <!-- Independent Projects Section -->
     <section class="project-category">
       <h2>Independent Projects</h2>
       <div class="project-grid">
-        <div class="project-card">
+        <div class="project-card" style="background-image: url('assets/indie-project1.png');">
           <h3>Project Title 1</h3>
           <p>A brief description of the project, including your role and contributions.</p>
           <a href="independent-project1.html" class="btn">View Details</a>
         </div>
-        <div class="project-card">
+        <div class="project-card" style="background-image: url('assets/indie-project2.png');">
           <h3>Project Title 2</h3>
           <p>A brief description of the project, including your role and contributions.</p>
           <a href="independent-project2.html" class="btn">View Details</a>
@@ -61,7 +72,7 @@
     <section class="project-category">
       <h2>Game Jam Projects</h2>
       <div class="project-grid">
-        <div class="project-card">
+        <div class="project-card" style="background-image: url('assets/gamejam-project1.png');">
           <h3>Project Title 1</h3>
           <p>A brief description of the project, including your role and contributions.</p>
           <a href="game-jam-project1.html" class="btn">View Details</a>

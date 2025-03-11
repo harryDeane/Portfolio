@@ -10,10 +10,17 @@
 <body>
   <header>
   <nav>
+  <!-- Profile Picture and Name -->
+    <div class="profilenav">
+      <img src="assets/profile.jpeg" alt="Harry Deane" class="profilenav-img">
+      <span class="profilenav-name">Harry Deane</span>
+    </div>
+	<div class="nav-container">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
     </ul>
+	</div>
   </nav>
   <button id="theme-toggle" class="theme-toggle">🌙</button>
 </header>
@@ -59,12 +66,12 @@
   <section class="projects">
     <h2>My Projects</h2>
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card" style="background-image: url('assets/indie-project1.png');">
         <h3>Unity Game</h3>
         <p>A 3D platformer game developed in Unity using C#.</p>
         <a href="project1.html" class="btn">View Details</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" style="background-image: url('assets/indie-project2.png');">
         <h3>OpenGL Renderer</h3>
         <p>A custom 3D renderer built with C++ and OpenGL.</p>
         <a href="project2.html" class="btn">View Details</a>
