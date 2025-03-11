@@ -247,3 +247,133 @@ body {
   padding: 2rem;
   border-radius: 10px;
 }
+
+/* CV Section Styles */
+.cv {
+  padding: 2rem;
+  text-align: center;
+  background: #f4f4f4; /* Light background to distinguish the section */
+}
+
+.cv h2 {
+  margin-bottom: 1rem;
+}
+
+.cv p {
+  margin-bottom: 1.5rem;
+}
+
+.cv .btn {
+  background: #333;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cv .btn:hover {
+  background: #555;
+  transform: scale(1.05);
+}
+
+/* Dark mode styles for CV section */
+body.dark-mode .cv {
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+body.dark-mode .cv .btn {
+  background: #444;
+}
+
+body.dark-mode .cv .btn:hover {
+  background: #666;
+}
+
+/* Projects Page Styles */
+.projects-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.projects-page h1 {
+  margin-bottom: 2rem;
+}
+
+.project-category {
+  margin-bottom: 3rem;
+}
+
+.project-category h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #333;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.project-card p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.project-card .btn {
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background: #555;
+  transform: scale(1.05);
+}
+
+/* Dark mode styles for projects page */
+body.dark-mode .projects-page h1,
+body.dark-mode .project-category h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .project-card {
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+body.dark-mode .project-card p {
+  color: #ccc;
+}
+
+body.dark-mode .project-card .btn {
+  background: #444;
+}
+
+body.dark-mode .project-card .btn:hover {
+  background: #666;
+}
